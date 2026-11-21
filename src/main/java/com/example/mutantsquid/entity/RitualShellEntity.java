@@ -35,7 +35,7 @@ public class RitualShellEntity extends Entity {
         shell.dataTracker.set(TIMER, RITUAL_TICKS);
         world.spawnEntity(shell);
         item.discard();
-        world.playSound(null, shell.getBlockPos(), SoundEvents.ENTITY_ELDER_GUARDIAN_CURSE.value(), SoundCategory.AMBIENT, 1.0f, 1.0f);
+        world.playSound(null, shell.getBlockPos(), SoundEvents.ENTITY_ELDER_GUARDIAN_CURSE, SoundCategory.AMBIENT, 1.0f, 1.0f);
         try {
             var sound = net.minecraft.registry.Registries.SOUND_EVENT.get(new Identifier("mutantsquid", "ritual_song"));
             if (sound != null) {
@@ -78,7 +78,8 @@ public class RitualShellEntity extends Entity {
                     lightning.refreshPositionAfterTeleport(getX(), getY(), getZ());
                     sw.spawnEntity(lightning);
                 }
-                sw.playSound(null, getBlockPos(), SoundEvents.ENTITY_GENERIC_EXPLODE.value(), SoundCategory.HOSTILE, 2.0f, 1.0f);
+                sw.playSound(null, getBlockPos(), • SoundEvents.ENTITY_GENERIC_EXPLODE
+, SoundCategory.HOSTILE, 2.0f, 1.0f);
                 this.discard();
                 spawnTentacles(sw);
             }
