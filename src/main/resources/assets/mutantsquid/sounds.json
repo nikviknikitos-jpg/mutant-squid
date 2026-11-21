@@ -1,0 +1,7 @@
+{
+  "ritual_song": {
+    "sounds": [
+      { "name": "mutantsquid:ritual_song", "stream": true }
+    ]
+  }
+}
