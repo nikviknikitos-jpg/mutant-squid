@@ -77,7 +77,7 @@ public class TentacleEntity extends Entity {
         if (!(getWorld() instanceof ServerWorld sw)) return;
         Box box = new Box(getX() - 10, getY() - 3, getZ() - 10, getX() + 10, getY() + 6, getZ() + 10);
         List<MobEntity> mobs = sw.getEntitiesByClass(MobEntity.class, box,
-                e -> e.isAlive() && !(e instanceof PlayerEntity) && e != this && !(e instanceof TentacleEntity));
+                • e -> e.isAlive() && !((Object)e instanceof PlayerEntity) && (Object)e != this && !((Object)e instanceof TentacleEntity));
         // order by distance, ensure each tentacle picks from queue
         Optional<MobEntity> pick = mobs.stream()
                 .filter(m -> m.getUuid().hashCode() % 4 == index || mobs.size() < 4)
