@@ -78,7 +78,7 @@ public class RitualShellEntity extends Entity {
                     lightning.refreshPositionAfterTeleport(getX(), getY(), getZ());
                     sw.spawnEntity(lightning);
                 }
-                sw.playSound(null, getBlockPos(), • SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.HOSTILE, 2.0f, 1.0f);
+                sw.playSound(null, getBlockPos(), SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.HOSTILE, 2.0f, 1.0f);
                 this.discard();
                 spawnTentacles(sw);
             }
