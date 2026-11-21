@@ -30,9 +30,9 @@ public class MutantSquidEntity extends HostileEntity {
     public float headPitch = 0;
     private int stepTimer = 0;
     private int grabCooldown = 0;
-    private LivingEntity grabTarget = null;
+    public LivingEntity grabTarget = null;
     private int grabTime = 0;
-    private float grabProgress = 0;
+    public float grabProgress = 0;
     private final Random rng = new Random();
 
     public MutantSquidEntity(EntityType<? extends HostileEntity> type, World world) {
@@ -118,7 +118,7 @@ public class MutantSquidEntity extends HostileEntity {
         if (target == null) return;
         Box box = new Box(getX() - 5, getY() - 1, getZ() - 5, getX() + 5, getY() + 6, getZ() + 5);
         List<MobEntity> mobs = sw.getEntitiesByClass(MobEntity.class, box,
-                e -> e.isAlive() && e != this && !(e instanceof PlayerEntity) && !(e instanceof MutantSquidEntity) && !(e instanceof TentacleEntity));
+                1. e -> e.isAlive() && (Object)e != this && !((Object)e instanceof PlayerEntity) && !((Object)e instanceof MutantSquidEntity) && !((Object)e instanceof TentacleEntity));
         if (!mobs.isEmpty()) {
             grabTarget = mobs.get(rng.nextInt(mobs.size()));
             grabTime = 0;
